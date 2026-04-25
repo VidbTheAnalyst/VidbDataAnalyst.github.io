@@ -712,29 +712,41 @@
 
 <script>
   /* ── TAB SWITCHING ── */
-function showTab(name) {
-  document.querySelectorAll('.tab-section').forEach(function(s) {
-    s.classList.remove('active-tab');
-  });
+  function showTab(name) {
+    document.querySelectorAll('.tab-section').forEach(function(s) {
+      s.classList.remove('active-tab');
+    });
 
-  document.querySelectorAll('#nav ul.links li a').forEach(function(a) {
-    a.classList.remove('tab-active');
-  });
+    document.querySelectorAll('#nav ul.links li a').forEach(function(a) {
+      a.classList.remove('tab-active');
+    });
 
-  var section = document.getElementById('section-' + name);
-  if (section) {
-    section.classList.add('active-tab');
-    section.scrollIntoView({ behavior: 'smooth' });
+    var section = document.getElementById('section-' + name);
+    if (section) {
+      section.classList.add('active-tab');
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    var tab = document.getElementById('tab-' + name);
+    if (tab) {
+      tab.classList.add('tab-active');
+    }
+
+    /* CLOSE MOBILE MENU */
+    document.body.classList.remove('is-navPanel-visible');
+
+    var navPanel = document.getElementById('navPanel');
+    if (navPanel) {
+      navPanel.classList.remove('visible');
+    }
+
+    var menu = document.querySelector('#nav .links');
+    if (menu) {
+      menu.classList.remove('active');
+    }
   }
-
-  var tab = document.getElementById('tab-' + name);
-  if (tab) tab.classList.add('tab-active');
-
-  // ✅ CLOSE MOBILE MENU
-  const menu = document.querySelector('#nav .links');
-  if (menu) menu.classList.remove('active');
-}
 </script>
+
 
 </body>
 </html>
