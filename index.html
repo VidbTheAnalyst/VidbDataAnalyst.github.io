@@ -713,28 +713,26 @@
 <script>
   /* ── TAB SWITCHING ── */
 function showTab(name) {
-  // Hide all tab sections
   document.querySelectorAll('.tab-section').forEach(function(s) {
     s.classList.remove('active-tab');
   });
 
-  // Remove active style from all nav links
   document.querySelectorAll('#nav ul.links li a').forEach(function(a) {
     a.classList.remove('tab-active');
   });
 
-  // Show selected section
   var section = document.getElementById('section-' + name);
   if (section) {
     section.classList.add('active-tab');
-    
-    // ✅ FIXED SCROLL
     section.scrollIntoView({ behavior: 'smooth' });
   }
 
-  // Highlight selected tab
   var tab = document.getElementById('tab-' + name);
   if (tab) tab.classList.add('tab-active');
+
+  // ✅ CLOSE MOBILE MENU
+  const menu = document.querySelector('#nav .links');
+  if (menu) menu.classList.remove('active');
 }
 </script>
 
