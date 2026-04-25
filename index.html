@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>VIDIT BHATNAGAR PORTFOLIO</title>
+<title>Vidit Bhatnagar | Data Analyst Portfolio</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="description" content="Vidit Bhatnagar – Data Analyst skilled in SQL, Python, Power BI and Excel. Open to work and internships. View projects, certifications and skills." />
 
 <link rel="stylesheet" href="assets/css/main.css" />
 <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -11,437 +12,643 @@
 <style>
 
 /* TECH STACK BADGES */
-
-.tech-stack span{
-display:inline-block;
-background:#1e252d;
-color:white;
-padding:4px 10px;
-margin:3px;
-border-radius:5px;
-font-size:12px;
+.tech-stack span {
+  display: inline-block;
+  background: #1e252d;
+  color: white;
+  padding: 4px 10px;
+  margin: 3px;
+  border-radius: 5px;
+  font-size: 12px;
 }
 
 /* PROJECT HOVER EFFECT */
-
-.posts article{
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+.posts article {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.posts article:hover{
-transform: translateY(-10px);
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
+.posts article:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 /* COMING SOON SECTION */
-
-.coming-soon{
-text-align:center;
-padding:60px 20px;
-opacity:0.8;
+.coming-soon {
+  text-align: center;
+  padding: 60px 20px;
+  opacity: 0.8;
+}
+.coming-soon h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+.coming-soon p {
+  font-size: 1.1rem;
 }
 
-.coming-soon h2{
-font-size:2rem;
-letter-spacing:2px;
+/* OPEN TO WORK BADGE */
+.open-to-work-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #00b09b, #1a7a4a);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0,176,155,0.5); }
+  70%  { box-shadow: 0 0 0 10px rgba(0,176,155,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,176,155,0); }
 }
 
-.coming-soon p{
-font-size:1.1rem;
+/* SKILLS */
+.skills-section {
+  margin: 40px 0;
+}
+.skills-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ffffff22;
+  padding-bottom: 8px;
+}
+
+/* LEARNING BADGES */
+.learning-badge {
+  display: inline-block;
+  background: #1e252d;
+  border-left: 3px solid #18bfef;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin: 4px;
+  color: #ddd;
+}
+.learning-badge span {
+  color: #18bfef;
+  font-weight: bold;
+}
+
+/* CERTIFICATIONS */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+.cert-card {
+  background: #1e252d;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border: 1px solid #18bfef55;
+}
+.cert-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #fff;
+  padding: 4px;
+}
+.cert-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.4;
+}
+.cert-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #aaa;
+}
+.cert-issuer {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 11px;
+  background: #ffffff15;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: #18bfef;
+}
+.cert-click-hint {
+  display: block;
+  margin-top: 7px;
+  font-size: 10px;
+  color: #18bfef88;
+}
+
+/* EDUCATION CARD */
+.education-card {
+  background: #1e252d;
+  border-radius: 10px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+.edu-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  color: #fff;
+}
+.edu-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* CTA */
+.cta-links {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* MODAL */
+.cert-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.cert-modal-overlay.active { display: flex; }
+.cert-modal-box {
+  background: #1a1f27;
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 750px;
+  width: 100%;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.7);
+  animation: modalIn 0.22s ease;
+}
+@keyframes modalIn {
+  from { transform: scale(0.93); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.cert-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.cert-modal-logo {
+  width: 34px; height: 34px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 6px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.cert-modal-header h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #fff;
+  flex: 1;
+  line-height: 1.4;
+}
+.cert-modal-close {
+  background: none; border: none;
+  color: #888; font-size: 24px;
+  cursor: pointer; padding: 0 2px;
+  transition: color 0.2s;
+}
+.cert-modal-close:hover { color: #fff; }
+.cert-modal-img {
+  width: 100%; border-radius: 8px;
+  display: block; max-height: 80vh;
+  object-fit: contain;
+}
+
+/* ── TAB SWITCHING ── */
+.tab-section {
+  display: none;
+  animation: fadeTab 0.3s ease;
+}
+.tab-section.active-tab {
+  display: block;
+}
+@keyframes fadeTab {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Active nav link highlight */
+#nav ul.links li a.tab-active {
+  border-bottom: 2px solid #18bfef;
+  color: #18bfef;
 }
 
 </style>
-
 </head>
 
 <body class="is-preload">
-
 <div id="wrapper" class="fade-in">
 
-<div id="intro">
-
-<h1>Vidit Bhatnagar<br />
-Data Analyst Portfolio</h1>
-
-<p>
-Learning Data Analytics and AI-assisted workflows using SQL, Python & BI tools
-<br>
-<a href="https://www.linkedin.com/in/vidit-bhatnagar-data-analyst/" target="_blank">LinkedIn</a> |
-<a href="https://github.com/VidbTheAnalyst" target="_blank">GitHub</a>
-</p>
-
-<ul class="actions">
-<li>
-<a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a>
-</li>
-</ul>
-
-</div>
-
-<header id="header">
-<a href="index.html" class="logo">WELCOME</a>
-</header>
-
-<nav id="nav">
-
-<ul class="links">
-<li class="active"><a href="index.html">My Projects</a></li>
-</ul>
-
-<ul class="icons">
-
-<li>
-<a href="https://www.linkedin.com/in/vidit-bhatnagar-data-analyst/" target="_blank" class="icon brands fa-linkedin-in">
-<span class="label">LinkedIn</span>
-</a>
-</li>
-
-<li>
-<a href="https://www.instagram.com/viditbhatnagar0502/" target="_blank" class="icon brands fa-instagram">
-<span class="label">Instagram</span>
-</a>
-</li>
-
-<li>
-<a href="https://github.com/VidbTheAnalyst" target="_blank" class="icon brands fa-github">
-<span class="label">GitHub</span>
-</a>
-</li>
-
-</ul>
-
-</nav>
-
-<div id="main">
-
-<!-- ABOUT ME SECTION -->
-
-<section class="post">
-
-<header class="major">
-<h2>About Me</h2>
-</header>
-
-<p>
-I am a Data Analyst skilled in transforming raw data into actionable insights. <br>
-I work with SQL, Python, and Business Intelligence tools to clean, analyze, and visualize data effectively. <br>
-I enjoy working on real-world datasets and building end-to-end analytics projects that <br>
-solve business problems and support data-driven decision making.
-</p>
-
-</section>
-
-<!-- FEATURED PROJECT -->
-
-<article class="post featured">
-
-<header class="major">
-
-<h2>
-<a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/DATA%20CLEANING%20USING%20MYSQL.sql" target="_blank">
-SQL Data Cleaning Project – Global Layoffs Dataset
-</a>
-</h2>
-
-<p>
-Cleaned and standardized a global layoffs dataset using SQL. 
-Improved dataset quality for accurate and reliable analysis.
-</p>
-
-<div class="tech-stack">
-<span>SQL</span>
-<span>Data Cleaning</span>
-<span>MySQL</span>
-<span>Data Transformation</span>
-</div>
-
-</header>
-
-<a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/DATA%20CLEANING%20USING%20MYSQL.sql"
-target="_blank"
-class="image main">
-
-<img src="images/DATA CLEANING USING MSQL.png" alt="" />
-
-</a>
-
-<ul class="actions special">
-
-<li>
-<a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/DATA%20CLEANING%20USING%20MYSQL.sql"
-class="button large"
-target="_blank">
-View project
-</a>
-</li>
-
-</ul>
-
-</article>
-
-<!-- PROJECTS SECTION -->
-
-<section class="posts">
-
-<!-- 🔥 NEW ECOMMERCE PROJECT (ADDED FIRST) -->
-
-<article>
-
-<header>
-
-<h2>
-<a href="https://github.com/VidbTheAnalyst/Ecommerce-Analytics-Project" target="_blank">
-E-Commerce Sales & Customer Analytics Dashboard
-</a>
-</h2>
-
-</header>
-
-<a href="https://github.com/VidbTheAnalyst/Ecommerce-Analytics-Project" target="_blank" class="image fit">
-
-<img src="images/Dashboard_preview.png" alt="" />
-
-</a>
-
-<p>
-End-to-end data analytics project using Python, SQL, and Power BI.
-Includes data cleaning, RFM customer segmentation, and an interactive dashboard
-to analyze revenue, customer behavior, and product performance.
-</p>
-
-<div class="tech-stack">
-<span>Python</span>
-<span>SQL</span>
-<span>Power BI</span>
-<span>RFM Analysis</span>
-<span>Data Analytics</span>
-</div>
-
-<ul class="actions special">
-
-<li>
-<a href="https://github.com/VidbTheAnalyst/Ecommerce-Analytics-Project"
-target="_blank"
-class="button">
-View Project
-</a>
-</li>
-
-</ul>
-
-</article>
-
-<!-- EXISTING PROJECTS (UNCHANGED) -->
-
-<article>
-
-<header>
-
-<h2>
-<a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/Exploratory_Data_Analysis.sql" target="_blank">
-SQL Exploratory Data Analysis – Global Layoffs Dataset
-</a>
-</h2>
-
-</header>
-
-<a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/Exploratory_Data_Analysis.sql" target="_blank" class="image fit">
-
-<img src="images/DATA CLEANING USING MSQL.png" alt="" />
-
-</a>
-
-<p>
-Performed exploratory data analysis on the cleaned layoffs dataset and 
-Identified key trends in layoffs across companies, industries, and countries.
-</p>
-
-<div class="tech-stack">
-<span>SQL</span>
-<span>EDA</span>
-<span>Data Analysis</span>
-</div>
-
-<ul class="actions special">
-
-<li>
-<a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/Exploratory_Data_Analysis.sql"
-target="_blank"
-class="button">
-View Project
-</a>
-</li>
-
-</ul>
-
-</article>
-
-<article>
-
-<header>
-
-<h2>
-<a href="https://github.com/VidbTheAnalyst/Railway-Reservation-System"
-target="_blank">
-Python Railway Reservation System <br>
-– CLI Application
-</a>
-</h2>
-
-</header>
-
-<a href="https://github.com/VidbTheAnalyst/Railway-Reservation-System"
-target="_blank"
-class="image fit">
-
-<img src="images/RAILWAY RESERVATION SYSTEM.png" alt="" />
-
-</a>
-
-<p>
-Python CLI-based railway reservation system implementing real-world
-train booking logic using Object-Oriented Programming.
-</p>
-
-<div class="tech-stack">
-<span>Python</span>
-<span>OOP</span>
-<span>CLI</span>
-</div>
-
-<ul class="actions special">
-
-<li>
-<a href="https://github.com/VidbTheAnalyst/Railway-Reservation-System"
-target="_blank"
-class="button">
-View Project
-</a>
-</li>
-
-</ul>
-
-</article>
-
-<!-- 🔥 MOVED BIKE RENTAL PROJECT HERE -->
-
-<article>
-
-<header>
-
-<h2>
-<a href="https://github.com/VidbTheAnalyst/Bike-Rental-CLI" target="_blank">
-Python Bike Rental System – CLI Application
-</a>
-</h2>
-
-</header>
-
-<a href="https://github.com/VidbTheAnalyst/Bike-Rental-CLI" class="image fit">
-
-<img src="images/BIKE RENTAL IMG.png" alt="" />
-
-</a>
-
-<p>
-A simple Python CLI project that simulates renting and returning bikes with time-based billing.
-Built using basic OOP concepts.
-</p>
-
-<div class="tech-stack">
-<span>Python</span>
-<span>OOP</span>
-<span>CLI</span>
-</div>
-
-<ul class="actions special">
-
-<li>
-<a href="https://github.com/VidbTheAnalyst/Bike-Rental-CLI"
-target="_blank"
-class="button">
-View Project
-</a>
-</li>
-
-</ul>
-
-</article>
-
-</section>
-
-<!-- MORE PROJECTS COMING SOON -->
-
-<section class="coming-soon">
-
-<h2>More Projects Coming Soon 🚀</h2>
-
-<p>
-Currently working on new Data Analytics projects. Stay tuned!
-</p>
-
-</section>
-
-</div>
-
-<footer id="footer">
-
-<section>
-
-<h3>Skills</h3>
-
-<p>
-
-<strong>Programming:</strong> Python, SQL  
-<br><br>
-
-<strong>Data Analysis:</strong> Pandas, Data Cleaning, Exploratory Data Analysis  
-<br><br>
-
-<strong>Visualization:</strong> Power BI, Microsoft Excel, Tableau
-<br><br>
-
-<strong>Tools:</strong> Pycharm, Jupyter Notebooks, Git, GitHub, VS Code  
-
-</p>
-
-</section>
-
-<section>
-
-<h3>Email</h3>
-
-<p>
-<a href="mailto:viditbhatnagar53@gmail.com">
-viditbhatnagar53@gmail.com
-</a>
-</p>
-
-</section>
-
-<section>
-
-<h3>Location</h3>
-
-<p>
-<a>
-Bareilly, Uttar Pradesh
-</a>
-</p>
-
-</section>
-
-<section> 
-<h3>Social</h3> 
-<ul class="icons alt">
-<li><a href="https://www.linkedin.com/in/vidit-bhatnagar-data-analyst/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li> 
-<li><a href="https://www.instagram.com/viditbhatnagar0502/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> 
-<li><a href="https://github.com/VidbTheAnalyst" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li> 
-</ul> 
-</section> 
-
-</footer>
-
+  <!-- INTRO -->
+  <div id="intro">
+    <h1>Vidit Bhatnagar<br />Data Analyst Portfolio</h1>
+    <p>
+      I analyze messy data and turn it into business insights that improve decisions and performance<br>
+      <a href="https://www.linkedin.com/in/vidit-bhatnagar-data-analyst/" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/VidbTheAnalyst" target="_blank">GitHub</a>
+    </p>
+    <div>
+      <span class="open-to-work-badge">✅ Available for internships / roles</span>
+    </div>
+    <ul class="actions" style="margin-top:20px;">
+      <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+    </ul>
+  </div>
+
+  <header id="header">
+    <a href="#" class="logo" onclick="showTab('about'); return false;">WELCOME</a>
+  </header>
+
+  <!-- NAV TABS -->
+  <nav id="nav">
+    <ul class="links">
+      <li><a href="#" onclick="showTab('about'); return false;" id="tab-about">About</a></li>
+      <li><a href="#" onclick="showTab('projects'); return false;" id="tab-projects">Projects</a></li>
+      <li><a href="#" onclick="showTab('certifications'); return false;" id="tab-certifications">Certifications</a></li>
+      <li><a href="#" onclick="showTab('contact'); return false;" id="tab-contact">Contact</a></li>
+    </ul>
+    <ul class="icons">
+      <li>
+        <a href="https://www.linkedin.com/in/vidit-bhatnagar-data-analyst/" target="_blank" class="icon brands fa-linkedin-in">
+          <span class="label">LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/viditbhatnagar0502/" target="_blank" class="icon brands fa-instagram">
+          <span class="label">Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/VidbTheAnalyst" target="_blank" class="icon brands fa-github">
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="main">
+
+    <!-- ══════════ ABOUT TAB ══════════ -->
+    <div class="tab-section active-tab" id="section-about">
+      <section class="post">
+        <header class="major">
+          <h2>About Me</h2>
+        </header>
+        <p>
+          Hi, I'm <strong>Vidit Bhatnagar</strong> — a 2nd year BCA student at RKGIT, Ghaziabad, and a self-driven
+          Data Analyst with about a year of hands-on learning in the data space. Over this time, I've built real-world
+          projects covering data cleaning, exploratory analysis, customer segmentation, and interactive dashboards.
+        </p>
+        <p>
+          I work with <strong>SQL</strong>, <strong>Python</strong>, <strong>Power BI</strong>, and <strong>Excel</strong>
+          to transform messy datasets into clear, actionable insights. The data industry excites me — I'm passionate about
+          the way numbers can tell stories and drive smarter decisions.
+        </p>
+        <p>
+          I'm currently <strong>open to work and internship opportunities</strong> where I can contribute, grow, and
+          apply my analytics skills to solve real business problems.
+        </p>
+
+        <div class="skills-section">
+          <h3>🛠 Skills</h3>
+          <p>
+            <span class="learning-badge">Python – Intermediate</span>
+            <span class="learning-badge">SQL – Intermediate</span>
+            <span class="learning-badge">Excel – Upper Intermediate</span>
+            <span class="learning-badge">Power BI – Intermediate</span>
+          </p>
+          <div style="margin-top:16px;">
+            <strong>📚 Currently Building:</strong><br><br>
+            <span class="learning-badge"><span>🔨</span> End-to-end Analytics Projects</span>
+            <span class="learning-badge"><span>📊</span> Advanced Power BI Dashboards</span>
+            <span class="learning-badge"><span>🐍</span> Deeper Python for Data Analysis</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ══════════ PROJECTS TAB ══════════ -->
+    <div class="tab-section" id="section-projects">
+
+      <!-- FEATURED -->
+      <article class="post featured">
+        <header class="major">
+          <h2>
+            <a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/DATA%20CLEANING%20USING%20MYSQL.sql" target="_blank">
+              SQL Data Cleaning Project – Global Layoffs Dataset
+            </a>
+          </h2>
+          <p>
+            Performed end-to-end data cleaning on a global layoffs dataset using SQL.
+            Handled missing values, removed duplicates, standardized company names, and structured the data for analysis.
+          </p>
+          <p><strong>Impact:</strong> Improved data quality and reliability, enabling accurate analysis of layoffs trends across industries and countries.</p>
+          <div class="tech-stack">
+            <span>SQL</span><span>Data Cleaning</span><span>MySQL</span><span>Data Transformation</span>
+          </div>
+        </header>
+        <a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/DATA%20CLEANING%20USING%20MYSQL.sql"
+           target="_blank" class="image main">
+          <img src="images/DATA CLEANING USING MSQL.png" alt="SQL Data Cleaning Project" />
+        </a>
+        <ul class="actions special">
+          <li>
+            <a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/DATA%20CLEANING%20USING%20MYSQL.sql"
+               class="button large" target="_blank">View Project</a>
+          </li>
+        </ul>
+      </article>
+
+      <!-- PROJECTS GRID -->
+      <section class="posts">
+
+        <article>
+          <header>
+            <h2><a href="https://github.com/VidbTheAnalyst/Ecommerce-Analytics-Project" target="_blank">
+              E-Commerce Sales &amp; Customer Analytics Dashboard
+            </a></h2>
+          </header>
+          <a href="https://github.com/VidbTheAnalyst/Ecommerce-Analytics-Project" target="_blank" class="image fit">
+            <img src="images/Dashboard_preview.png" alt="Ecommerce Analytics Dashboard" />
+          </a>
+          <p>
+            Built an end-to-end analytics project using Python, SQL, and Power BI.
+            Performed data cleaning, transformation, and RFM-based customer segmentation to analyze customer behavior and sales patterns.
+            Developed an interactive dashboard to track revenue, product performance, and customer insights.
+          </p>
+          <p><strong>Impact:</strong> Enabled data-driven decision making by identifying high-value customers and key revenue drivers.</p>
+          <div class="tech-stack">
+            <span>Python</span><span>SQL</span><span>Power BI</span><span>RFM Analysis</span><span>Data Analytics</span>
+          </div>
+          <ul class="actions special">
+            <li><a href="https://github.com/VidbTheAnalyst/Ecommerce-Analytics-Project" target="_blank" class="button">View Project</a></li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h2><a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/Exploratory_Data_Analysis.sql" target="_blank">
+              SQL Exploratory Data Analysis – Global Layoffs Dataset
+            </a></h2>
+          </header>
+          <a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/Exploratory_Data_Analysis.sql"
+             target="_blank" class="image fit">
+            <img src="images/DATA CLEANING USING MSQL.png" alt="SQL EDA Project" />
+          </a>
+          <p>
+            Conducted exploratory data analysis on a cleaned global layoffs dataset using SQL.
+            Analyzed layoffs across companies, industries, and regions to identify patterns and trends.
+          </p>
+          <p><strong>Impact:</strong> Provided insights into industry-wise layoffs trends, helping understand market dynamics and business shifts.</p>
+          <div class="tech-stack">
+            <span>SQL</span><span>EDA</span><span>Data Analysis</span>
+          </div>
+          <ul class="actions special">
+            <li><a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/Exploratory_Data_Analysis.sql" target="_blank" class="button">View Project</a></li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h2><a href="https://github.com/VidbTheAnalyst/Railway-Reservation-System" target="_blank">
+              Python Railway Reservation System – CLI Application
+            </a></h2>
+          </header>
+          <a href="https://github.com/VidbTheAnalyst/Railway-Reservation-System" target="_blank" class="image fit">
+            <img src="images/RAILWAY RESERVATION SYSTEM.png" alt="Railway Reservation System" />
+          </a>
+          <p>
+            Developed a command-line based railway reservation system using Python.
+            Implemented core booking logic, seat allocation, and ticket management using OOP principles.
+          </p>
+          <p><strong>Impact:</strong> Simulated real-world booking workflows, strengthening understanding of system design and logic implementation.</p>
+          <div class="tech-stack">
+            <span>Python</span><span>OOP</span><span>CLI</span>
+          </div>
+          <ul class="actions special">
+            <li><a href="https://github.com/VidbTheAnalyst/Railway-Reservation-System" target="_blank" class="button">View Project</a></li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h2><a href="https://github.com/VidbTheAnalyst/Bike-Rental-CLI" target="_blank">
+              Python Bike Rental System – CLI Application
+            </a></h2>
+          </header>
+          <a href="https://github.com/VidbTheAnalyst/Bike-Rental-CLI" target="_blank" class="image fit">
+            <img src="images/BIKE RENTAL IMG.png" alt="Bike Rental CLI" />
+          </a>
+          <p>
+            Built a Python CLI application to simulate a bike rental system with time-based billing.
+            Implemented features for renting, returning, and calculating rental costs.
+          </p>
+          <p><strong>Impact:</strong> Demonstrated practical application of OOP and real-world problem solving.</p>
+          <div class="tech-stack">
+            <span>Python</span><span>OOP</span><span>CLI</span>
+          </div>
+          <ul class="actions special">
+            <li><a href="https://github.com/VidbTheAnalyst/Bike-Rental-CLI" target="_blank" class="button">View Project</a></li>
+          </ul>
+        </article>
+
+      </section>
+
+      <section class="coming-soon">
+        <h2>More Projects Coming Soon 🚀</h2>
+        <p>Currently working on new Data Analytics projects. Stay tuned!</p>
+      </section>
+
+    </div>
+
+    <!-- ══════════ CERTIFICATIONS TAB ══════════ -->
+    <div class="tab-section" id="section-certifications">
+      <section class="post">
+        <header class="major">
+          <h2>Education &amp; Certifications</h2>
+        </header>
+
+        <div class="education-card">
+          <div style="flex-shrink:0;">
+            <img src="images/RKGIT_IMAGE.jpeg" alt="RKGIT logo" style="width:44px; height:44px; object-fit:contain; border-radius:6px;" />
+          </div>
+          <div class="edu-info">
+            <h4>Bachelor of Computer Applications (BCA) — 2nd Year</h4>
+            <p>RKGIT – Raj Kumar Goel Institute of Technology, Ghaziabad, Uttar Pradesh</p>
+            <p style="margin-top:4px; color:#18bfef; font-size:12px;">Expected Graduation: 2027</p>
+          </div>
+        </div>
+
+        <div class="cert-grid" style="margin-top:28px;">
+
+          <div class="cert-card" onclick="openCertModal(
+              'images/GOOGLE_DA_PROFESSIONAL_CERTIFICATE.jpeg',
+              'Google Data Analytics Professional Certificate',
+              'https://coursera.org/verify/6P9QQPYL4DHS',
+              'images/Google_DA.png')">
+            <img class="cert-logo" src="images/Google_DA.png" alt="Google logo" />
+            <div class="cert-info">
+              <h4>Google Data Analytics Professional Certificate</h4>
+              <p>Jul 2024</p>
+              <span class="cert-issuer">Google / Coursera</span>
+              <span class="cert-click-hint">🖱 Click to view certificate</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="openCertModal(
+              'images/COMMUNICATION_COURSE_CERTIFICATE_by_GOOGLE.jpeg',
+              'Ask Questions to Make Data-Driven Decisions',
+              'https://coursera.org/verify/WTP8VQVL24NE',
+              'images/Google_DA.png')">
+            <img class="cert-logo" src="images/Google_DA.png" alt="Google logo" />
+            <div class="cert-info">
+              <h4>Asking Questions to Make Data-Driven Decisions</h4>
+              <p>Jul 2024</p>
+              <span class="cert-issuer">Google / Coursera</span>
+              <span class="cert-click-hint">🖱 Click to view certificate</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="openCertModal(
+              'images/Data_Analytics_Bootcamp_Certification_of_Completion.png',
+              'Data Analytics Bootcamp',
+              '',
+              'images/Bootcamp.jpeg')">
+            <img class="cert-logo" src="images/Bootcamp.jpeg" alt="Bootcamp logo" />
+            <div class="cert-info">
+              <h4>Data Analytics Bootcamp</h4>
+              <p>Apr 2026</p>
+              <span class="cert-issuer">Analyst Builder</span>
+              <span class="cert-click-hint">🖱 Click to view certificate</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="openCertModal(
+              'images/PYTHON_UDEMY_CERTIFICATE.jpeg',
+              'Python for Absolute Beginners',
+              'https://ude.my/UC-0ed5fb0e-06c2-411f-bb99-827213af8d5e',
+              'images/udemy_cert.png')">
+            <img class="cert-logo" src="images/udemy_cert.png" alt="Udemy logo" />
+            <div class="cert-info">
+              <h4>Python for Absolute Beginners</h4>
+              <p>4.5 hrs · April 2024</p>
+              <span class="cert-issuer">Udemy</span>
+              <span class="cert-click-hint">🖱 Click to view certificate</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="openCertModal(
+              'images/ADVANCED_EXCEL_CERTIFICATE.jpeg',
+              'Advanced Excel – 1 Day Workshop',
+              '',
+              'https://www.ducat.in/images/logo.png')">
+            <img class="cert-logo"
+                 src="https://www.ducat.in/images/logo.png"
+                 alt="DUCAT logo"
+                 onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732220.png'" />
+            <div class="cert-info">
+              <h4>Advanced Excel – 1 Day Workshop</h4>
+              <p>April 2025 · Ghaziabad</p>
+              <span class="cert-issuer">DUCAT – The IT Training School</span>
+              <span class="cert-click-hint">🖱 Click to view certificate</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ══════════ CONTACT TAB ══════════ -->
+    <div class="tab-section" id="section-contact">
+      <section class="post" style="text-align:center;">
+        <header class="major">
+          <h2>Let's Work Together</h2>
+        </header>
+        <p>
+          I'm a 2nd year BCA student actively looking for <strong>Data Analyst internships</strong> and entry-level roles.
+          I bring hands-on experience with SQL, Python, Power BI, and Excel — and a genuine passion for turning data into decisions.
+          If you think I'd be a good fit for your team, I'd love to hear from you.
+        </p>
+        <div class="cta-links">
+          <a href="mailto:viditbhatnagar53@gmail.com" class="button primary">📧 Email Me</a>
+          <a href="https://www.linkedin.com/in/vidit-bhatnagar-data-analyst/" target="_blank" class="button">🔗 Connect on LinkedIn</a>
+        </div>
+      </section>
+    </div>
+
+  </div><!-- end #main -->
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <section>
+      <h3>Skills</h3>
+      <p>
+        <strong>Programming:</strong> Python, SQL<br><br>
+        <strong>Data Analysis:</strong> Pandas, Data Cleaning, Exploratory Data Analysis<br><br>
+        <strong>Visualization:</strong> Power BI, Microsoft Excel, Tableau<br><br>
+        <strong>Tools:</strong> PyCharm, Jupyter Notebooks, Git, GitHub, VS Code
+      </p>
+    </section>
+    <section>
+      <h3>Email</h3>
+      <p><a href="mailto:viditbhatnagar53@gmail.com">viditbhatnagar53@gmail.com</a></p>
+    </section>
+    <section>
+      <h3>Location</h3>
+      <p>Ghaziabad, Uttar Pradesh</p>
+    </section>
+    <section>
+      <h3>Social</h3>
+      <ul class="icons alt">
+        <li><a href="https://www.linkedin.com/in/vidit-bhatnagar-data-analyst/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+        <li><a href="https://www.instagram.com/viditbhatnagar0502/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/VidbTheAnalyst" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+      </ul>
+    </section>
+  </footer>
+
+</div><!-- end #wrapper -->
+
+<!-- CERTIFICATE MODAL -->
+<div class="cert-modal-overlay" id="certModal" onclick="handleOverlayClick(event)">
+  <div class="cert-modal-box">
+    <div class="cert-modal-header">
+      <img class="cert-modal-logo" id="modalLogo" src="" alt="issuer logo" />
+      <h3 id="modalTitle"></h3>
+      <button class="cert-modal-close" onclick="closeCertModal()">✕</button>
+    </div>
+    <img class="cert-modal-img" id="modalImg" src="" alt="Certificate" />
+    <div style="text-align:center; margin-top:14px;">
+      <a id="modalVerifyLink" href="#" target="_blank"
+         style="display:none; font-size:13px; color:#18bfef; text-decoration:underline;">
+        🔗 Verify Certificate Online
+      </a>
+    </div>
+  </div>
 </div>
 
 <script src="assets/js/jquery.min.js"></script>
@@ -451,6 +658,62 @@ Bareilly, Uttar Pradesh
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+
+<script>
+  /* ── TAB SWITCHING ── */
+  function showTab(name) {
+    // Hide all tab sections
+    document.querySelectorAll('.tab-section').forEach(function(s) {
+      s.classList.remove('active-tab');
+    });
+    // Remove active style from all nav links
+    document.querySelectorAll('#nav ul.links li a').forEach(function(a) {
+      a.classList.remove('tab-active');
+    });
+    // Show selected section
+    var section = document.getElementById('section-' + name);
+    if (section) section.classList.add('active-tab');
+    // Highlight selected tab
+    var tab = document.getElementById('tab-' + name);
+    if (tab) tab.classList.add('tab-active');
+    // Scroll to top of main content
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Set About as active on load
+  document.addEventListener('DOMContentLoaded', function() {
+    showTab('about');
+  });
+
+  /* ── CERTIFICATE MODAL ── */
+  function openCertModal(imgSrc, title, verifyUrl, logoSrc) {
+    document.getElementById('modalImg').src = imgSrc;
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalLogo').src = logoSrc;
+    var link = document.getElementById('modalVerifyLink');
+    if (verifyUrl) {
+      link.href = verifyUrl;
+      link.style.display = 'inline';
+    } else {
+      link.style.display = 'none';
+    }
+    document.getElementById('certModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCertModal() {
+    document.getElementById('certModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('certModal')) closeCertModal();
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeCertModal();
+  });
+</script>
 
 </body>
 </html>
