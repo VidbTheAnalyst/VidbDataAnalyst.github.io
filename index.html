@@ -712,58 +712,30 @@
 
 <script>
   /* ── TAB SWITCHING ── */
-  function showTab(name) {
-    // Hide all tab sections
-    document.querySelectorAll('.tab-section').forEach(function(s) {
-      s.classList.remove('active-tab');
-    });
-    // Remove active style from all nav links
-    document.querySelectorAll('#nav ul.links li a').forEach(function(a) {
-      a.classList.remove('tab-active');
-    });
-    // Show selected section
-    var section = document.getElementById('section-' + name);
-    if (section) section.classList.add('active-tab');
-    // Highlight selected tab
-    var tab = document.getElementById('tab-' + name);
-    if (tab) tab.classList.add('tab-active');
-    // Scroll to top of main content
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // Set About as active on load
-  document.addEventListener('DOMContentLoaded', function() {
-    showTab('about');
+function showTab(name) {
+  // Hide all tab sections
+  document.querySelectorAll('.tab-section').forEach(function(s) {
+    s.classList.remove('active-tab');
   });
 
-  /* ── CERTIFICATE MODAL ── */
-  function openCertModal(imgSrc, title, verifyUrl, logoSrc) {
-    document.getElementById('modalImg').src = imgSrc;
-    document.getElementById('modalTitle').textContent = title;
-    document.getElementById('modalLogo').src = logoSrc;
-    var link = document.getElementById('modalVerifyLink');
-    if (verifyUrl) {
-      link.href = verifyUrl;
-      link.style.display = 'inline';
-    } else {
-      link.style.display = 'none';
-    }
-    document.getElementById('certModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeCertModal() {
-    document.getElementById('certModal').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function handleOverlayClick(e) {
-    if (e.target === document.getElementById('certModal')) closeCertModal();
-  }
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeCertModal();
+  // Remove active style from all nav links
+  document.querySelectorAll('#nav ul.links li a').forEach(function(a) {
+    a.classList.remove('tab-active');
   });
+
+  // Show selected section
+  var section = document.getElementById('section-' + name);
+  if (section) {
+    section.classList.add('active-tab');
+    
+    // ✅ FIXED SCROLL
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Highlight selected tab
+  var tab = document.getElementById('tab-' + name);
+  if (tab) tab.classList.add('tab-active');
+}
 </script>
 
 </body>
