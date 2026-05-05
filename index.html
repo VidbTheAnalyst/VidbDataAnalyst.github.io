@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* ── VARIABLES ── */
     :root {
       --bg:        #050d1a;
       --bg2:       #0a1628;
@@ -53,6 +52,7 @@
       z-index: 0;
     }
 
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -104,6 +104,29 @@
     }
     .nav-cta:hover { background: var(--blue-lt); transform: translateY(-1px); color: #fff !important; }
 
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     main { position: relative; z-index: 1; }
 
     section {
@@ -131,7 +154,6 @@
       background: var(--blue-lt);
       border-radius: 2px;
     }
-
     .section-title {
       font-family: var(--font-head);
       font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -140,14 +162,12 @@
       line-height: 1.15;
       margin-bottom: 16px;
     }
-
     .section-sub {
       color: var(--muted);
       font-size: 1rem;
       max-width: 560px;
       margin-bottom: 52px;
     }
-
     .section-divider {
       width: 100%;
       height: 1px;
@@ -168,7 +188,6 @@
       position: relative;
       overflow: hidden;
     }
-
     #hero::after {
       content: '';
       position: absolute;
@@ -189,7 +208,6 @@
       pointer-events: none;
       z-index: 0;
     }
-
     .hero-inner {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -245,13 +263,6 @@
       border-radius: 50%;
       animation: blink 1.5s infinite;
     }
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-photo-wrap { order: -1; display: flex; justify-content: center; }
-      .hero-photo-ring { width: 200px; height: 200px; }
-      .hero-actions { justify-content: center; }
-      .hero-stats { justify-content: center; }
-    }
 
     .hero-badge {
       display: inline-flex;
@@ -278,7 +289,6 @@
       0%,100% { opacity: 1; }
       50% { opacity: 0.3; }
     }
-
     .hero-title {
       font-family: var(--font-head);
       font-size: clamp(2.6rem, 6vw, 4.2rem);
@@ -294,7 +304,6 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
     .hero-sub {
       font-size: 1.1rem;
       color: var(--muted);
@@ -302,14 +311,12 @@
       margin-bottom: 36px;
       animation: fadeUp 0.6s 0.2s ease both;
     }
-
     .hero-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
       animation: fadeUp 0.6s 0.3s ease both;
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -323,10 +330,7 @@
       text-decoration: none;
       border: none;
     }
-    .btn-primary {
-      background: var(--blue);
-      color: #fff;
-    }
+    .btn-primary { background: var(--blue); color: #fff; }
     .btn-primary:hover {
       background: var(--blue-lt);
       transform: translateY(-2px);
@@ -343,7 +347,6 @@
       color: #fff;
       transform: translateY(-2px);
     }
-
     .hero-stats {
       display: flex;
       gap: 36px;
@@ -365,7 +368,6 @@
       margin-top: 4px;
       letter-spacing: 0.3px;
     }
-
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -373,21 +375,14 @@
 
     /* ══ ABOUT ══ */
     #about { padding-top: 120px; }
-
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: start;
     }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 16px;
-      font-size: 0.98rem;
-    }
+    .about-text p { color: var(--muted); margin-bottom: 16px; font-size: 0.98rem; }
     .about-text p strong { color: var(--text); }
-
     .skills-title {
       font-family: var(--font-head);
       font-size: 1rem;
@@ -395,22 +390,11 @@
       color: #fff;
       margin-bottom: 20px;
     }
-
     .skill-item { margin-bottom: 18px; }
-    .skill-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 7px;
-      font-size: 0.88rem;
-    }
+    .skill-row { display: flex; justify-content: space-between; margin-bottom: 7px; font-size: 0.88rem; }
     .skill-name { color: var(--text); font-weight: 500; }
     .skill-level { color: var(--muted); font-size: 0.8rem; }
-    .skill-track {
-      height: 6px;
-      background: var(--bg3);
-      border-radius: 99px;
-      overflow: hidden;
-    }
+    .skill-track { height: 6px; background: var(--bg3); border-radius: 99px; overflow: hidden; }
     .skill-fill {
       height: 100%;
       border-radius: 99px;
@@ -418,7 +402,6 @@
       width: 0%;
       transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
     }
-
     .currently-building {
       margin-top: 32px;
       padding: 20px;
@@ -446,8 +429,6 @@
 
     /* ══ PROJECTS ══ */
     #projects { padding-top: 120px; }
-
-    /* Featured project */
     .featured-project {
       background: var(--card);
       border: 1px solid var(--border);
@@ -461,7 +442,6 @@
       transform: translateY(-4px);
       box-shadow: 0 20px 60px rgba(37,99,235,0.15);
     }
-    /* FIX 1: featured image — fixed height, no overflow */
     .fp-img {
       width: 100%;
       height: 260px;
@@ -491,11 +471,7 @@
       margin-bottom: 12px;
       line-height: 1.3;
     }
-    .fp-desc {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
+    .fp-desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 10px; }
     .fp-impact {
       color: var(--text);
       font-size: 0.9rem;
@@ -506,13 +482,7 @@
       border-radius: 0 6px 6px 0;
     }
     .fp-impact strong { color: var(--blue-lt); }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 24px;
-    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
     .tag {
       background: var(--bg3);
       color: var(--muted);
@@ -521,14 +491,11 @@
       border-radius: 6px;
       border: 1px solid var(--border);
     }
-
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 24px;
     }
-
-    /* FIX 2: project cards — flex column so image is capped and body fills rest */
     .project-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -544,7 +511,6 @@
       box-shadow: 0 16px 48px rgba(37,99,235,0.15);
       border-color: rgba(59,130,246,0.4);
     }
-    /* FIX 2: thumbnail strictly contained — no overflow */
     .pc-img {
       width: 100%;
       height: 160px;
@@ -554,12 +520,7 @@
       display: block;
       flex-shrink: 0;
     }
-    .pc-body {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
+    .pc-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
     .pc-title {
       font-family: var(--font-head);
       font-size: 1rem;
@@ -568,11 +529,7 @@
       margin-bottom: 10px;
       line-height: 1.35;
     }
-    .pc-desc {
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-bottom: 8px;
-    }
+    .pc-desc { color: var(--muted); font-size: 0.85rem; margin-bottom: 8px; }
     .pc-impact {
       font-size: 0.82rem;
       color: var(--text);
@@ -583,13 +540,7 @@
       border-radius: 0 4px 4px 0;
     }
     .pc-impact strong { color: var(--blue-lt); }
-    .pc-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: auto;
-    }
-
+    .pc-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
     .coming-soon-card {
       background: var(--card);
       border: 1px dashed var(--border);
@@ -607,7 +558,6 @@
 
     /* ══ CERTIFICATIONS ══ */
     #certifications { padding-top: 120px; }
-
     .edu-card {
       display: flex;
       align-items: center;
@@ -636,7 +586,6 @@
     }
     .edu-info p { font-size: 0.85rem; color: var(--muted); }
     .edu-info .grad { color: var(--blue-lt); font-size: 0.8rem; margin-top: 4px; }
-
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -667,13 +616,7 @@
       padding: 4px;
       flex-shrink: 0;
     }
-    .cert-info h4 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 5px;
-      line-height: 1.35;
-    }
+    .cert-info h4 { font-size: 0.9rem; font-weight: 600; color: #fff; margin-bottom: 5px; line-height: 1.35; }
     .cert-info p { font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; }
     .cert-badge {
       display: inline-block;
@@ -684,28 +627,17 @@
       border-radius: 4px;
       font-weight: 600;
     }
-    .cert-hint {
-      display: block;
-      font-size: 0.7rem;
-      color: rgba(59,130,246,0.5);
-      margin-top: 6px;
-    }
+    .cert-hint { display: block; font-size: 0.7rem; color: rgba(59,130,246,0.5); margin-top: 6px; }
 
     /* ══ CONTACT ══ */
     #contact { padding-top: 120px; padding-bottom: 120px; }
-
     .contact-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: start;
     }
-
-    .contact-left p {
-      color: var(--muted);
-      margin-bottom: 32px;
-      font-size: 0.98rem;
-    }
+    .contact-left p { color: var(--muted); margin-bottom: 32px; font-size: 0.98rem; }
     .contact-links { display: flex; flex-direction: column; gap: 14px; }
     .contact-link {
       display: flex;
@@ -718,19 +650,9 @@
       transition: border-color 0.2s, transform 0.2s;
       color: var(--text);
     }
-    .contact-link:hover {
-      border-color: var(--blue-lt);
-      transform: translateX(4px);
-      color: #fff;
-    }
-    .contact-link i {
-      font-size: 1.1rem;
-      color: var(--blue-lt);
-      width: 20px;
-      text-align: center;
-    }
+    .contact-link:hover { border-color: var(--blue-lt); transform: translateX(4px); color: #fff; }
+    .contact-link i { font-size: 1.1rem; color: var(--blue-lt); width: 20px; text-align: center; }
     .contact-link span { font-size: 0.9rem; }
-
     .contact-right {
       background: var(--card);
       border: 1px solid var(--border);
@@ -746,13 +668,10 @@
       color: #fff;
       margin-bottom: 12px;
     }
-    .contact-right p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 28px;
-    }
+    .contact-right p { color: var(--muted); font-size: 0.9rem; margin-bottom: 28px; }
     .contact-right .btn { width: 100%; justify-content: center; margin-bottom: 12px; }
 
+    /* ── FOOTER ── */
     footer {
       background: var(--bg2);
       border-top: 1px solid var(--border);
@@ -764,6 +683,7 @@
     footer p { font-size: 0.82rem; color: var(--muted); }
     footer span { color: var(--blue-lt); }
 
+    /* ── MODAL ── */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -789,12 +709,7 @@
       from { transform: scale(0.93); opacity: 0; }
       to   { transform: scale(1);    opacity: 1; }
     }
-    .modal-head {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
+    .modal-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
     .modal-head img {
       width: 32px; height: 32px;
       object-fit: contain;
@@ -803,38 +718,129 @@
       padding: 3px;
     }
     .modal-head h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: #fff; flex: 1; }
-    .modal-close {
-      background: none; border: none;
-      color: var(--muted); font-size: 1.3rem;
-      cursor: pointer; transition: color 0.2s;
-    }
+    .modal-close { background: none; border: none; color: var(--muted); font-size: 1.3rem; cursor: pointer; transition: color 0.2s; }
     .modal-close:hover { color: #fff; }
     .modal-img { width: 100%; border-radius: 10px; max-height: 78vh; object-fit: contain; }
-    .modal-verify {
-      text-align: center;
-      margin-top: 14px;
-      font-size: 0.82rem;
-      color: var(--blue-lt);
-      text-decoration: underline;
-    }
+    .modal-verify { text-align: center; margin-top: 14px; font-size: 0.82rem; color: var(--blue-lt); text-decoration: underline; }
 
+    /* ── SCROLL REVEAL ── */
     .reveal {
       opacity: 0;
       transform: translateY(32px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* ══════════════════════════════════
+       RESPONSIVE / MOBILE
+    ══════════════════════════════════ */
     @media (max-width: 768px) {
-      nav { padding: 0 5%; }
-      .nav-links { gap: 1rem; }
-      #hero { padding-left: 5%; padding-right: 5%; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
-      .hero-stats { gap: 24px; }
+
+      /* Nav — show hamburger, hide links */
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 68px; left: 0; right: 0;
+        background: rgba(5,13,26,0.98);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 5% 28px;
+        gap: 0;
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid var(--border); }
+      .nav-links li:last-child { border-bottom: none; margin-top: 12px; }
+      .nav-links a {
+        display: block;
+        padding: 14px 0;
+        font-size: 1rem;
+        color: var(--text);
+      }
+      .nav-cta {
+        display: block;
+        text-align: center;
+        padding: 12px 0 !important;
+        border-radius: 8px;
+      }
+
+      /* Hero — stack vertically, photo on top */
+      #hero {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 88px;
+        padding-bottom: 60px;
+        align-items: flex-start;
+        min-height: unset;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+      .hero-photo-wrap {
+        order: -1;
+        display: flex;
+        justify-content: center;
+      }
+      .hero-photo-ring { width: 160px; height: 160px; }
+      .hero-photo-badge {
+        bottom: 4px;
+        right: -8px;
+        font-size: 0.65rem;
+        padding: 4px 10px;
+      }
+      .hero-badge { font-size: 0.75rem; margin-bottom: 16px; }
+      .hero-title {
+        font-size: clamp(1.9rem, 9vw, 2.8rem);
+        margin-bottom: 14px;
+      }
+      .hero-sub {
+        font-size: 0.9rem;
+        margin: 0 auto 24px;
+      }
+      .hero-actions {
+        justify-content: center;
+        gap: 10px;
+      }
+      .hero-actions .btn {
+        padding: 10px 18px;
+        font-size: 0.82rem;
+      }
+
+      /* Stats — clean 2×2 grid */
+      .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 16px;
+        margin-top: 32px;
+        justify-items: center;
+      }
+      .stat-number { font-size: 1.6rem; }
+      .stat-label { font-size: 0.72rem; }
+
+      /* About */
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+
+      /* Projects */
+      .fp-img { height: 180px; }
+      .fp-body { padding: 20px; }
+      .fp-title { font-size: 1.15rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+
+      /* Certifications */
+      .cert-grid { grid-template-columns: 1fr; }
+      .edu-card { flex-direction: column; text-align: center; }
+
+      /* Contact */
+      .contact-wrap { grid-template-columns: 1fr; gap: 36px; }
+      .contact-link span { font-size: 0.8rem; word-break: break-all; }
+
+      /* Section spacing */
+      section { padding: 72px 5%; }
+      #about, #projects, #certifications, #contact { padding-top: 72px; }
     }
   </style>
 </head>
@@ -842,13 +848,16 @@
 <body>
 
   <nav>
-    <div class="nav-logo">VB<span>.</span></div>
-    <ul class="nav-links">
+    <div class="nav-logo"><span>VidbTheAnalyst</span></div>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#projects" class="nav-link">Projects</a></li>
       <li><a href="#certifications" class="nav-link">Certifications</a></li>
       <li><a href="#contact" class="nav-cta nav-link">Contact</a></li>
     </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <main>
@@ -856,6 +865,7 @@
     <!-- HERO -->
     <section id="hero">
       <div class="hero-inner">
+
         <div class="hero-content">
           <div class="hero-badge">
             <span class="dot"></span>
@@ -866,7 +876,7 @@
             <span class="highlight">Data Analyst</span>
           </h1>
           <p class="hero-sub">
-           I analyze e-commerce and business datasets to uncover revenue drivers, customer behavior, and growth opportunities using SQL, Python & Power BI
+            I analyze e-commerce and business datasets to uncover revenue drivers, customer behavior, and growth opportunities using SQL, Python &amp; Power BI
           </p>
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View My Projects</a>
@@ -892,6 +902,7 @@
             </div>
           </div>
         </div>
+
         <div class="hero-photo-wrap">
           <div class="hero-photo-glow"></div>
           <div class="hero-photo-ring">
@@ -901,6 +912,7 @@
             <span class="dot2"></span> Open to Work
           </div>
         </div>
+
       </div>
     </section>
 
@@ -977,7 +989,6 @@
         <p class="section-sub">End-to-end analytics projects built on real-world datasets — from raw data to business insights.</p>
       </div>
 
-      <!-- ★ CHANGE 1: E-Commerce is now the featured project ★ -->
       <div class="featured-project reveal">
         <img class="fp-img" src="images/Dashboard_preview.png" alt="E-Commerce Analytics Dashboard" />
         <div class="fp-body">
@@ -986,7 +997,7 @@
           <p class="fp-desc">
             End-to-end analytics project using Python, SQL, and Power BI. Performed RFM-based customer segmentation and built an interactive dashboard surfacing revenue trends, product performance, and customer insights.
           </p>
-          <div class="fp-impact"><strong>Impact:</strong> Identified high-value customer segments using RFM analysis to support targeted marketing decisions</div>
+          <div class="fp-impact"><strong>Impact:</strong> Identified high-value customer segments using RFM analysis to support targeted marketing decisions.</div>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">SQL</span>
@@ -1000,7 +1011,6 @@
         </div>
       </div>
 
-      <!-- GRID — SQL Cleaning now in grid instead of E-Commerce -->
       <div class="projects-grid">
 
         <div class="project-card reveal">
@@ -1010,8 +1020,7 @@
             <p class="pc-desc">End-to-end data cleaning on a global layoffs dataset using SQL. Handled missing values, removed duplicates, and standardized company names.</p>
             <div class="pc-impact"><strong>Impact:</strong> Improved data quality and reliability for accurate layoffs trend analysis.</div>
             <div class="tags">
-              <span class="tag">SQL</span><span class="tag">MySQL</span>
-              <span class="tag">Data Cleaning</span>
+              <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Data Cleaning</span>
             </div>
             <div class="pc-footer">
               <a href="https://github.com/VidbTheAnalyst/SQL-DataCleaning-Project/blob/main/DATA%20CLEANING%20USING%20MYSQL.sql" target="_blank" class="btn btn-outline" style="padding: 8px 18px; font-size:0.82rem;">
@@ -1061,7 +1070,7 @@
         <img class="edu-logo" src="images/RKGIT_IMAGE.jpeg" alt="RKGIT" />
         <div class="edu-info">
           <h3>Bachelor of Computer Applications (BCA) — 2nd Year</h3>
-          <p>RKGIT – Raj Kumar Goel Institute of Technology, Ghaziabad, Uttar Pradesh</p>
+          <p>Raj Kumar Goel Institute of Technology, Ghaziabad, Uttar Pradesh</p>
           <p class="grad">📅 Expected Graduation: 2027</p>
         </div>
       </div>
@@ -1072,7 +1081,7 @@
           <img class="cert-logo-img" src="images/Google_DA.png" alt="Google" />
           <div class="cert-info">
             <h4>Google Data Analytics Professional Certificate</h4>
-            <p>Foundations: Data, Data, Everywhere · Jul 2024</p>
+            <p>Jul 2024</p>
             <span class="cert-badge">Google / Coursera</span>
             <span class="cert-hint">🖱 Click to view</span>
           </div>
@@ -1082,7 +1091,7 @@
           <img class="cert-logo-img" src="images/Google_DA.png" alt="Google" />
           <div class="cert-info">
             <h4>Ask Questions to Make Data-Driven Decisions</h4>
-            <p>Google Data Analytics Series · Jul 2024</p>
+            <p>Jul 2024</p>
             <span class="cert-badge">Google / Coursera</span>
             <span class="cert-hint">🖱 Click to view</span>
           </div>
@@ -1092,7 +1101,7 @@
           <img class="cert-logo-img" src="images/Bootcamp.jpeg" alt="Bootcamp" />
           <div class="cert-info">
             <h4>Data Analytics Bootcamp</h4>
-            <p>Certificate of Completion · Apr 2026</p>
+            <p>Apr 2026</p>
             <span class="cert-badge">Analyst Builder</span>
             <span class="cert-hint">🖱 Click to view</span>
           </div>
@@ -1102,7 +1111,7 @@
           <img class="cert-logo-img" src="images/udemy_cert.png" alt="Udemy" />
           <div class="cert-info">
             <h4>Python for Absolute Beginners</h4>
-            <p>4.5 hrs · April 2024</p>
+            <p> April 2024</p>
             <span class="cert-badge">Udemy</span>
             <span class="cert-hint">🖱 Click to view</span>
           </div>
@@ -1115,7 +1124,7 @@
                onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732220.png'" />
           <div class="cert-info">
             <h4>Advanced Excel – 1 Day Workshop</h4>
-            <p>April 2025 · Ghaziabad</p>
+            <p>April 2025</p>
             <span class="cert-badge">DUCAT</span>
             <span class="cert-hint">🖱 Click to view</span>
           </div>
@@ -1157,7 +1166,7 @@
           </div>
         </div>
         <div class="contact-right reveal">
-          <h3>Available for immediate internship opportunities (Remote / On-site)</h3>
+          <h3>Open to Internships & Entry-Level Roles</h3>
           <p>Actively seeking Data Analyst internships and entry-level roles. Let's connect and explore how I can add value to your team.</p>
           <a href="mailto:viditbhatnagar53@gmail.com" class="btn btn-primary">
             <i class="fas fa-paper-plane"></i> Send Me an Email
@@ -1172,7 +1181,7 @@
   </main>
 
   <footer>
-    <p>Designed &amp; built by <span>Vidit Bhatnagar</span> · Data Analyst · Ghaziabad, UP</p>
+    <p><span>Vidit Bhatnagar</span> · Data Analyst · Ghaziabad, UP</p>
   </footer>
 
   <!-- MODAL -->
@@ -1191,6 +1200,7 @@
   </div>
 
   <script>
+    /* ── NAV ACTIVE ON SCROLL ── */
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     window.addEventListener('scroll', () => {
@@ -1204,6 +1214,7 @@
       });
     });
 
+    /* ── SCROLL REVEAL ── */
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -1219,6 +1230,7 @@
     }, { threshold: 0.12 });
     reveals.forEach(r => observer.observe(r));
 
+    /* ── MODAL ── */
     function openModal(img, title, verify, logo) {
       document.getElementById('mImg').src = img;
       document.getElementById('mTitle').textContent = title;
@@ -1237,6 +1249,20 @@
       if (e.target === document.getElementById('certModal')) closeModal();
     }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    /* ── HAMBURGER ── */
+    const navToggle = document.getElementById('navToggle');
+    const navLinksEl = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinksEl.classList.toggle('open');
+    });
+    navLinksEl.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinksEl.classList.remove('open');
+      });
+    });
   </script>
 
 </body>
